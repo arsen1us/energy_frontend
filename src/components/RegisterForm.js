@@ -12,6 +12,7 @@ const RegisterForm = () => {
         setUserName(event.target.value);
         const response = await axios.post("https://localhost:7128/api/users/check-email", {UserName: userName})
         console.log('Login availability', response.data)
+        var message = JSON.s
     }
 
     const handlePassword = async (event) => {
@@ -24,7 +25,7 @@ const RegisterForm = () => {
         event.preventDefault();
 
         try{
-            const response = await axios.post('https://localhost:7128/api/users/registration', {UserName: userName, Password: password});
+            const response = await axios.post('https://localhost:7128/api/users/register', {UserName: userName, Password: password});
             console.log("Console log: ", userName, " " ,password);
             console.log('Data', response.data)
             //setSuccess(response.data.message);
